@@ -3,6 +3,7 @@ import React from "react";
 
 //Redux
 import { connect } from "react-redux";
+import { getCard } from "./store/actions";
 
 //Components
 import Card from "./store/components/Card";
@@ -10,7 +11,9 @@ import Card from "./store/components/Card";
 //Stylesheet
 import './App.css';
 
-function App() {
+function App(props) {
+  const 
+
   return (
     <div className="App">
       <p>Placeholder text for React-Redux App.</p>
