@@ -12,14 +12,14 @@ export const getCard = () => {
         dispatch({ type: FETCH_CARD_START });
 
         axios   
-            .get("https://api.scryfall.com/cards/random")
+            .get("URL")
             .then((res) => {
                 console.log(res);
-                dispatch({ type: FETCH_CARD_SUCCESS, payload: res.data });
+                dispatch({ type: FETCH_CARD_SUCCESS, payload: res.data.results });
             })
             .catch((err) => {
                 console.log(err.message);
-                dispatch({ type: FETCH_CARD_FAILURE, payload: err.message });
+                dispatch({ type: FETCH_CARD_FAILURE, payload: err.response.error });
             });
     };
 };
