@@ -47,3 +47,21 @@ Take the app as far as you can go! Styling, redux hooks, another API, an input t
 
 ## Submission Format
 * [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+
+## API INFO 
+
+MTG API Link: 
+https://api.scryfall.com/cards/random 
+
+Blob return: 
+"name": "String",
+"released_at": "# string",
+"mana_cost": "", (can be empty)
+"type_line": "String",
+"image_uris": { (object containing multiple URLs)
+"normal": "url"
+}
+
+******************************************************
+
+There's more data returned than that, but those might work for a clean app that returns a random MTG card.
