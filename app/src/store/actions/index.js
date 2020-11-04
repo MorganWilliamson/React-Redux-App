@@ -13,9 +13,9 @@ export const getCard = () => {
 
         axios   
             .get("https://api.scryfall.com/cards/random")
-            .then((res) => {
-                console.log(res);
-                dispatch({ type: FETCH_CARD_SUCCESS, payload: res.data });
+            .then((response) => {
+                console.log(response);
+                dispatch({ type: FETCH_CARD_SUCCESS, payload: response.data });
             })
             .catch((err) => {
                 console.log(err.message);

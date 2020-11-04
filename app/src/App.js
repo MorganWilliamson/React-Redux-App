@@ -2,8 +2,8 @@
 import React from "react";
 
 //Redux
-// import { connect } from "react-redux";
-// import { getCard } from "./store/actions";
+import { connect } from "react-redux";
+import { getCard } from "./store/actions";
 
 //Components
 import Card from "./store/components/Card";
@@ -11,13 +11,37 @@ import Card from "./store/components/Card";
 //Stylesheet
 import './App.css';
 
-function App() {
+function App(props) {
+  const fetchCard = (e) => {
+    e.preventDefault();
+    props.getCard();
+  };
+
+
   return (
     <div className="App">
-      <p>Placeholder text for React-Redux App.</p>
-      <Card />
+      <h2>Random Card:</h2>
+        {props.isLoading ? <p>Loading a random card. . .</p> : null}
+        {props.error ? <p style={{ color: "red" }}>{props.error}</p> : null}
+        <div>
+          {props.cardData.map(card => (
+            <Card card={card} />
+          ))}
+        </div>
+        <button onClick={fetchCard}>Get New Card</button>
     </div>
   );
 }
 
-export default App;
+//mapStateToProps
+const mapStateToProps = (state) => {
+  return{
+      isLoading: state.isLoading,
+      cardData: state.cardData,
+      error: state.error,
+  };
+};
+
+
+//add: connect, mapStateToProps
+export default connect(mapStateToProps, { getCard })(App);
