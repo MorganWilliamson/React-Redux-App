@@ -1,14 +1,15 @@
 //Card component
-import React, { useEffect } from "react";
+import React from "react";
 
 //Redux
 import { connect } from "react-redux";
 import { getCard } from "../actions/index";
 
 const Card = (props) => {
-    useEffect(() => {
+    const fetchCard = (e) => {
+        e.preventDefault();
         props.getCard();
-    }, []);
+    };
     
     return (
         <div className="cardComp">
@@ -19,7 +20,8 @@ const Card = (props) => {
                 <div>
                     <h4>{card.name}</h4>
                 </div>
-            ))};
+            ))}
+            <button onClick={fetchCard}>Get New Card</button>
         </div>
     );
 };

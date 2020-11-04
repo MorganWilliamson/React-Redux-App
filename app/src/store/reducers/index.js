@@ -20,6 +20,7 @@ export const cardReducer = (state = initialState, action) => {
                 ...state, 
                 isLoading: false,
                 cardData: action.payload,
+                error: "",
             };
         case FETCH_CARD_FAILURE:
             return{
