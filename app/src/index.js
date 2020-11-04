@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 //Redux
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { reducer } from "./store/reducers";
+import { cardReducer } from "./store/reducers";
 
 //Components?
 
@@ -15,7 +15,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(cardReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

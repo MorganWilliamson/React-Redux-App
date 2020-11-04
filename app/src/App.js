@@ -1,12 +1,20 @@
+//React
 import React from "react";
+
+//Redux
+import { connect } from "react-redux";
+
+//Components
+import Card from "./store/components/Card";
+
+//Stylesheet
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-        <p>
-          Placeholder text for React-Redux App.
-        </p>
+      <p>Placeholder text for React-Redux App.</p>
+      <Card />
     </div>
   );
 }
