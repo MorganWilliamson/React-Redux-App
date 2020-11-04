@@ -55,12 +55,12 @@ https://api.scryfall.com/cards/random
 
 Blob return: 
 "name": "String",
+"image_uris": { (object containing multiple URLs)
+"normal": "url"
+},
 "released_at": "# string",
 "mana_cost": "", (can be empty)
 "type_line": "String",
-"image_uris": { (object containing multiple URLs)
-"normal": "url"
-}
 
 ******************************************************
 
