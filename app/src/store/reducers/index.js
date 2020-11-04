@@ -9,6 +9,24 @@ const initialState = {
 
 export const cardReducer = (state = initialState, action) => {
     switch (action.type) {
+        case FETCH_CARD_START: 
+            return{
+                ...state,
+                isLoading: true,
+                error: "",
+            };
+        case FETCH_CARD_SUCCESS:
+            return{
+                ...state, 
+                isLoading: false,
+                cardData: action.payload,
+            };
+        case FETCH_CARD_FAILURE:
+            return{
+                ...state,
+                isLoading: false,
+                error: action.payload,
+            }
         default:
             return state;
     }
