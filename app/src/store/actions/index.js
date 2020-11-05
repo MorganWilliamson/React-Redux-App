@@ -15,7 +15,7 @@ export const getCard = () => {
             .get("https://api.scryfall.com/cards/random")
             .then((response) => {
                 console.log(response);
-                dispatch({ type: FETCH_CARD_SUCCESS, payload: response.data.results });
+                dispatch({ type: FETCH_CARD_SUCCESS, payload: response.object.data });
             })
             .catch((err) => {
                 // console.log(err.message);
