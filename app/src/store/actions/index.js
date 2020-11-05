@@ -15,10 +15,10 @@ export const getCard = () => {
             .get("https://api.scryfall.com/cards/random")
             .then((response) => {
                 console.log(response);
-                dispatch({ type: FETCH_CARD_SUCCESS, payload: response.data });
+                dispatch({ type: FETCH_CARD_SUCCESS, payload: response.data.results });
             })
             .catch((err) => {
-                console.log(err.message);
+                // console.log(err.message);
                 dispatch({ type: FETCH_CARD_FAILURE, payload: err.response });
             });
     };
