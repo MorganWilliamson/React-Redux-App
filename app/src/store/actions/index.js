@@ -18,7 +18,7 @@ export const getCard = () => {
                 dispatch({ type: FETCH_CARD_SUCCESS, payload: response.object.data });
             })
             .catch((err) => {
-                // console.log(err.message);
+                console.log(err.message);
                 dispatch({ type: FETCH_CARD_FAILURE, payload: err.response });
             });
     };

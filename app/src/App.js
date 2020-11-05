@@ -24,7 +24,7 @@ function App(props) {
         {props.error ? <p style={{ color: "red" }}>{props.error}</p> : null}
         <div>
           {props.cardData.map((card) => (
-            <Card key={card.id} card={card} />
+            <Card card={card} />
           ))}
         </div>
         <button onClick={fetchCard}>Get New Card</button>
